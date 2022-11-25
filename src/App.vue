@@ -1,27 +1,31 @@
 <template>
-  <!-- vue3 组件的模版结构可以没有跟标签  -->
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <h1>信息</h1>
+  <h2>{{name}}</h2>
+  <h2>{{age}}</h2>
+  <button @click="sayHello">说话</button>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+// import {h} from 'vue';
 export default {
   name: 'App',
-  components: {
-    HelloWorld
+  setup(){
+    let name = '张三'
+    let age = 18
+
+    function sayHello(){
+      console.log(`我叫${name},我${age}岁,你好呀`)
+    }
+    // 返回一个对象(常用)
+    return {
+      name,
+      age,
+      sayHello
+    }
+
+    // 返回一个函数(渲染函数)
+    // return ()=> h('h1','娃哈哈')
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
