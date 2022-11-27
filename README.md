@@ -279,3 +279,24 @@ npm run dev
   ```
 
 ## 8.生命周期
+
+- Vue3.0中可以继续使用Vue2.x中的生命周期钩子，但有有两个被更名：
+  - ```beforeDestroy```改名为 ```beforeUnmount```
+  - ```destroyed```改名为 ```unmounted```
+- Vue3.0也提供了 Composition API 形式的生命周期钩子，与Vue2.x中钩子对应关系如下：
+  - `beforeCreate`===>`setup()`
+  - `created`=======>`setup()`
+  - `beforeMount` ===>`onBeforeMount`
+  - `mounted`=======>`onMounted`
+  - `beforeUpdate`===>`onBeforeUpdate`
+  - `updated` =======>`onUpdated`
+  - `beforeUnmount` ==>`onBeforeUnmount`
+  - `unmounted` =====>`onUnmounted`
+
+## 9.自定义hook函数
+
+- 什么是hook？—— 本质是一个函数，把setup函数中使用的Composition API进行了封装。
+
+- 类似于vue2.x中的mixin。
+
+- 自定义hook的优势: 复用代码, 让setup中的逻辑更清楚易懂。
