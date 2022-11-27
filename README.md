@@ -277,3 +277,5 @@ npm run dev
       console.log('watchEffect配置的回调执行了')
   })
   ```
+
+## 8.生命周期
